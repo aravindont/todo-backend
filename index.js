@@ -1,20 +1,23 @@
-import express from "express";
-import dotenv from "dotenv";
-import { connectToDb } from "./config/db.connect.js";
-import cors from "cors";
-
+require("dotenv").config();
+const express = require("express");
 const app = express();
-dotenv.config();
-connectToDb();
 
-const port = process.env.PORT || 8000;
-const version = "v1";
+// Importing the todo router
+const todoRouter = require("./routes/todo.routes");
 
-app.use(cors({ credentials: true }));
+// Connecting to the database
+require("./config/db.connect").connectToDb();
 
+// Middleware for parsing incoming JSON data
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-app.listen(port, () => {
-  console.log(`server started on http://localhost:${port}`);
+// Middleware for parsing incoming URL-encoded data
+app.use(express.urlencoded({ extended: false }));
+
+// Routes
+app.use("/todo", todoRouter);
+
+// Start the server
+app.listen(process.env.PORT, () => {
+  console.log(`Server started on http://localhost:${process.env.PORT}`);
 });
