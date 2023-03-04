@@ -1,7 +1,7 @@
 const { TodoModel } = require("../model/todo.model");
 
 // Method POST
-// Adds todo Entry to Database
+// Adds todo to Database
 
 const addTodo = async (req, res) => {
   try {
@@ -14,7 +14,7 @@ const addTodo = async (req, res) => {
       });
     }
     const todo = new TodoModel({ userId, title });
-    if (task) task.forEach((e) => todo.tasks.push(e));
+    if (Array.isArray(task)) task.forEach((e) => todo.tasks.push(e));
     await todo.save();
     res.status(201).json(todo);
   } catch (error) {
