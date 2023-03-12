@@ -18,6 +18,9 @@ app.use(express.json());
 // Middleware for parsing incoming URL-encoded data
 app.use(express.urlencoded({ extended: false }));
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Namaste" });
+});
 // Routes
 app.use("/todo", todoRouter);
 app.use("/task", taskRouter);

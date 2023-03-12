@@ -9,7 +9,7 @@ const createTask = async (req, res) => {
         message: "Task and id are required",
       });
     }
-
+    /**finding the todo by its id */
     const todo = await TodoModel.findById(id);
 
     if (!todo) {
@@ -49,7 +49,7 @@ const deleteTask = async (req, res) => {
 const editTask = async (req, res) => {
   try {
     const { id, key, newTask } = req.body;
-
+    /**find the todo in the database by its id */
     const todo = await TodoModel.findById(id);
 
     if (!todo) {
