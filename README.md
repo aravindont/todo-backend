@@ -10,7 +10,6 @@
 
 > To run the code in your system excute the below commands in the terminal
 
-- This project is `scaffolded` using `vite` template
 - First clone the project `git clone git@github.com:aravindont/todo-backend.git`
 - Install all the necessary packages using `npm install`
 - Now run the command `npm run devStart`
