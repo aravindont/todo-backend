@@ -1,14 +1,12 @@
 # TODO App Backend
 
-## Tech Stack used to build the API
+## ⚙ Tools and Technologies used
 
-- Node.js
-- Express.js
-- MongoDB
+1. [Node.js](https://nodejs.org/en/)
+2. [Express.js](https://expressjs.com/)
+3. [MongoDB](https://www.mongodb.com/)
 
-## How to run this project in local
-
-> To run the code in your system excute the below commands in the terminal
+## 🛠 Installation and setup
 
 - First clone the project `git clone git@github.com:aravindont/todo-backend.git`
 - Install all the necessary packages using `npm install`
@@ -26,7 +24,7 @@
 | Field  | Type                   | Use                                       |
 | ------ | ---------------------- | ----------------------------------------- |
 | title  | String                 | To store the todo titles                  |
-| task   | Array of String values | To store the tasks                        |
+| tasks  | Array of String values | To store the tasks                        |
 | userId | String                 | To store the userId of the logged in user |
 
 ## API Endpoints
