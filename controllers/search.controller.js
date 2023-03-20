@@ -14,7 +14,6 @@ const searchController = async (req, res) => {
   try {
     const { userId, query } = req.query;
     const todos = await TodoModel.find({ userId });
-    console.log(todos);
     const result = filterTodos(todos, query);
     return res.status(200).json(result);
   } catch (error) {
